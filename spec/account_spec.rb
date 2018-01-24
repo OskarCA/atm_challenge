@@ -3,7 +3,7 @@ require 'date'
 
 describe Account do
 
-    it 'checks length of a number' do
+    it 'checks length of pin number' do
         number = random_pin
         number_length = Math.log10(number).to_i + 1
         expect(number_length).to eq 4
