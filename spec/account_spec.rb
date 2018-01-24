@@ -1,7 +1,11 @@
 require './lib/account.rb'
+require './lib/atm.rb'
 require 'date'
 
+
+
 describe Account do
+
 
     it 'is expected to have a 4 digit pin code' do
         number = random_pin

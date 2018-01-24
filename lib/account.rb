@@ -4,12 +4,14 @@ class Account
 
   STANDARD_VALIDITY_YRS = 5
 
- def initialize
+ def initialize(attrs = {})
      @exp_date = exp_date
      @pin_code = generate_pin
      @balance = 0
      @account_status = :deactivated
+
  end
+
 
  def deactivate
      account_status = :deactivated

@@ -12,7 +12,7 @@ class Atm
         when insufficient_funds_in_account?(amount, account)
             { status: false, message: 'insufficient funds in ATM', date: Date.today }
 
-        when insuf  ficient_funds_in_account?(amount,account)
+        when insufficient_funds_in_account?(amount,account)
             { status: false, message: 'insufficient funds in ATM', date: Date.today }
 
         when incorrect_pin?(pin_code, account.pin_code)
