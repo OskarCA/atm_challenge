@@ -7,6 +7,7 @@ class Account
  def initialize
      @exp_date = exp_date
      @pin_code = generate_pin
+     @balance = 0
  end
 
  def generate_pin
@@ -17,4 +18,5 @@ class Account
     Date.today.next_year(STANDARD_VALIDITY_YRS).strftime('%m/%y')
  end
 
- end
+
+end
