@@ -1,4 +1,4 @@
-require './lib/atm.rb'
+require 'atm.rb'
 require  'date'
 
 describe Atm do
