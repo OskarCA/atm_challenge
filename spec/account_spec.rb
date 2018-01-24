@@ -9,14 +9,17 @@ describe Account do
         expect(number_length).to eq 4
     end
 
+    private
 
-    def random_pin
-      rand(1000..9999)
-    end
+        def random_pin
+            rand(1000..9999)
+        end
+
 
     it 'is expected to have an expiry date initialize' do
         expected_date = Date.today.next_year(5).strftime("%m/%y")
         expect(subject.exp_date).to eq expected_date
     end
+
 
 end
