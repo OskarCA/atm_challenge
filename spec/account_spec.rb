@@ -15,9 +15,13 @@ describe Account do
             rand(1000..9999)
         end
 
-
     it 'is expected to have an expiry date initialize' do
         expected_date = Date.today.next_year(5).strftime("%m/%y")
         expect(subject.exp_date).to eq expected_date
+    end
+
+    it 'deactivates account using Instance method' do
+        subject.deactivate
+        expect(subject.account_status).to eq :deactivated
     end
 end

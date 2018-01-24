@@ -8,6 +8,11 @@ class Account
      @exp_date = exp_date
      @pin_code = generate_pin
      @balance = 0
+     @account_status = :deactivated
+ end
+
+ def deactivate
+     account_status = :deactivated
  end
 
  def generate_pin
