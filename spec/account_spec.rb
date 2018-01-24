@@ -8,7 +8,7 @@ describe Account do
         expect(number_length).to eq 4
     end
 end
-
+# Comment
 def random_pin
     rand(1000..9999)
 end
