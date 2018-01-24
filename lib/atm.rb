@@ -1,7 +1,7 @@
 class Atm
   attr_accessor :funds
 
-    # Define 1000$ in ATM.
+    # Define 1000$ in ATM
     def initialize
         @funds = 1000
     end
