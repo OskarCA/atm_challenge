@@ -32,19 +32,18 @@ private
   end
 
   def withdraw_funds(args)
-    @cash += args[:amount]
-    atm = args[:atm]
-    account = args[:account]
-    amount = args[:amount]
-    pin = args[:pin]
-    atm.withdraw(amount, pin, account)
+     args[:atm] == nil ? missing_atm : atm = args[:atm]
+     account = @account
+     amount = args[:amount]
+     pin = args[:pin]
+     response = atm.withdraw(amount, pin, account)
+     response[:status] == true ? increase_cash(response) : response
+   end
 
-  end
-=begin
   def increase_cash(response)
     @cash += response[:amount]
   end
-=end
+
   def set_name(obj)
     obj.nil? ? missing_name : @name = obj
   end
