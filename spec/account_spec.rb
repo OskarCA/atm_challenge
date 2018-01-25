@@ -1,5 +1,6 @@
 require './lib/account.rb'
 require './lib/atm.rb'
+require './lib/person.rb'
 require 'date'
 
  describe Account do
