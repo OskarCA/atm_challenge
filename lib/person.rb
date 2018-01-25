@@ -2,9 +2,8 @@ require 'date'
 require "atm.rb"
 require "account.rb"
 
-
 class Person
-attr_accessor :name, :cash, :account
+  attr_accessor :name, :cash, :account
 
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
@@ -21,7 +20,7 @@ attr_accessor :name, :cash, :account
   end
 
   def withdraw(args = {})
-      @account == nil ? missing_account : withdraw_funds(args)
+    @account == nil ? missing_account : withdraw_funds(args)
   end
 
 private
@@ -59,4 +58,5 @@ private
   def missing_atm
     raise RuntimeError, 'An ATM is required'
   end
+
 end
