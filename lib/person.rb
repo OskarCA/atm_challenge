@@ -21,8 +21,7 @@ attr_accessor :name, :cash, :account
   end
 
   def withdraw(args = {})
-      @account == nil ? missing_account : withdraw_funds
-      (args)
+      @account == nil ? missing_account : withdraw_funds(args)
   end
 
 private
@@ -33,18 +32,19 @@ private
   end
 
   def withdraw_funds(args)
-    args[:atm] == nil ? missing_atm : atm = args[:atm]
-    account = @account
+    @cash += args[:amount]
+    atm = args[:atm]
+    account = args[:account]
     amount = args[:amount]
     pin = args[:pin]
-    response = atm.withdraw(amount, pin, account)
-    response[:status] == true ? increase_cash(response) : response
-  end
+    atm.withdraw(amount, pin, account)
 
+  end
+=begin
   def increase_cash(response)
     @cash += response[:amount]
   end
-
+=end
   def set_name(obj)
     obj.nil? ? missing_name : @name = obj
   end
