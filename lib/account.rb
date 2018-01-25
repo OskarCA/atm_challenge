@@ -35,4 +35,5 @@ private
   def missing_owner
     raise 'An Account owner is required'
   end
+
 end
