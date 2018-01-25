@@ -39,6 +39,7 @@ require 'date'
     it 'can deposit funds' do
       expect(subject.deposit(100)).to be_truthy
     end
+end
 
     describe 'can not manage funds if no account been created' do
     it 'can\'t deposit funds' do
@@ -66,4 +67,4 @@ end
 
 
 
-  end
+  
