@@ -4,12 +4,12 @@ require "person.rb"
 class Atm
   attr_accessor :funds
 
-    # Define 1000$ in ATM
+
     def initialize
         @funds = 1000
     end
 
-    # Define withdraw.
+
     def withdraw(amount, pin_code, account)
         case
         when insufficient_funds_in_account?(amount, account)
@@ -33,7 +33,7 @@ class Atm
       end
 
       private
-      # Define insufficient funds in ATM
+
       def insufficient_funds_in_atm?(amount)
           @funds < amount
       end
@@ -42,12 +42,12 @@ class Atm
         amount > account.balance
       end
 
-      #Define if pin is incorrect or correct
+
       def incorrect_pin?(pin_code, actual_pin)
         pin_code != actual_pin
       end
 
-      # Define transaction
+
       def perform_transaction(amount, account)
         @funds -= amount
         account.balance = account.balance - amount
@@ -68,7 +68,7 @@ class Atm
          end
          bills
      end
-      #Card expired
+    
       def card_expired?(exp_date)
           Date.strptime(exp_date, '%m/%y') < Date.today
       end
