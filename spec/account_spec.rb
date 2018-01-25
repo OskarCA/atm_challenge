@@ -3,9 +3,10 @@ require './lib/atm.rb'
 require './lib/person.rb'
 require 'date'
 
- describe Account do
-      let(:person) {instance_double('Person', name: 'Thomas')}
-      subject { described_class.new({owner: person}) }
+describe Account do
+
+    let(:person) {instance_double('Person', name: 'Thomas')}
+    subject { described_class.new({owner: person}) }
 
 
     it 'is expected to raise error if no owner is set' do
@@ -13,21 +14,21 @@ require 'date'
     end
 
     it 'is expected to have an owner' do
-        expect(subject.owner).to eq person
+      expect(subject.owner).to eq person
     end
 
     it 'is expected to have a 4 digit pin code' do
-        pin_length = Math.log10(subject.pin_code).to_i + 1
-        expect(pin_length).to eq 4
+      pin_length = Math.log10(subject.pin_code).to_i + 1
+      expect(pin_length).to eq 4
     end
 
     it 'is expected to have an expiry date initialize' do
-        expected_date = Date.today.next_year(5).strftime("%m/%y")
-        expect(subject.exp_date).to eq expected_date
+      expected_date = Date.today.next_year(5).strftime("%m/%y")
+      expect(subject.exp_date).to eq expected_date
     end
 
     it 'deactivates account using Instance method' do
-        subject.deactivate
-        expect(subject.account_status).to eq :deactivated
+      subject.deactivate
+      expect(subject.account_status).to eq :deactivated
     end
  end

@@ -62,22 +62,24 @@ private
         date: Date.today,
         amount: amount,
         bills: add_bills(amount) }
-   end
+  end
 
-   def add_bills(amount)
+  def add_bills(amount)
      denominations = [20, 10 , 5]
      bills = []
      denominations.each do |bill|
      while amount - bill >= 0
      amount -= bill
      bills << bill
-   end
-   end
+  end
+  end
      bills
-   end
+  end
 
-   def card_expired?(exp_date)
+  def card_expired?(exp_date)
      Date.strptime(exp_date, '%m/%y') < Date.today
-   end
+  end
 
+  def account_status?(account)
+  end
 end
