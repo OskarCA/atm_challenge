@@ -44,3 +44,4 @@ describe Atm do
    expected_output = { status: false, message: 'card expired', date: Date.today }
    expect(subject.withdraw(6, '1234', account)).to eq expected_output
   end
+end
