@@ -10,34 +10,34 @@ class Atm
   end
 
   def withdraw(amount, pin_code, account)
-  case
-  when insufficient_funds_in_account?(amount, account)
-       { status: false,
-         message: 'insufficient funds in ATM',
-         date: Date.today }
+      case
+      when insufficient_funds_in_account?(amount, account)
+           { status: false,
+             message: 'insufficient funds in ATM',
+             date: Date.today }
 
-  when insufficient_funds_in_account?(amount,account)
-       { status: false,
-         message: 'insufficient funds in ATM',
-         date: Date.today }
+      when insufficient_funds_in_account?(amount,account)
+           { status: false,
+             message: 'insufficient funds in ATM',
+             date: Date.today }
 
-  when incorrect_pin?(pin_code, account.pin_code)
-       { status: false,
-         message: 'wrong pin',
-         date: Date.today }
+      when incorrect_pin?(pin_code, account.pin_code)
+           { status: false,
+             message: 'wrong pin',
+             date: Date.today }
 
-  when card_expired?(account.exp_date)
-       { status: false,
-         message: 'card expired',
-         date: Date.today }
+      when card_expired?(account.exp_date)
+           { status: false,
+             message: 'card expired',
+             date: Date.today }
 
-  when account_status?(account)
-       { status: true,
-         message: 'active',
-         date: Date.today }
-  else
-       perform_transaction(amount, account)
-  end
+      when account_status?(account)
+           { status: true,
+             message: 'active',
+             date: Date.today }
+      else
+           perform_transaction(amount, account)
+      end
   end
 
 private
