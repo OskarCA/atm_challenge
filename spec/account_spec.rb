@@ -30,5 +30,5 @@ describe Account do
    subject.deactivate
    expect(subject.account_status).to eq :deactivated
   end
-       
+
  end
