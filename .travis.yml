@@ -1,5 +1,8 @@
+
 language: ruby
-    rvm:
-        - 2.4.1
-script: bundle exce rspec
-        
+rvm:
+  - 2.4.1
+matrix:
+  include:
+    - rvm: 2.0.0
+      gemfile: gemfiles/2.0.0-Gemfile
