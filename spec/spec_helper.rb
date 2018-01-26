@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 
-=======
 require 'coveralls'
 Coveralls.wear!
  
->>>>>>> 24487cc9578bdd1dc377dcb65ac7113558167327
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
